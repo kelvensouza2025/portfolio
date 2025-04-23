@@ -1,0 +1,21 @@
+# Decisões de Arquitetura
+
+## Decisões
+
+- Next.js foi escolhido no front-end por oferecer Server Side Rendering nativo e ótimo suporte para SEO
+
+- Vercel foi selecionada para deploy do front-end pela facilidade de integração direta com GitHub e a infraestrutura otimizada para aplicações Next.js
+
+- Nest.js no back-end por ser modular, baseado em conceitos de OOP e SOLID, facilitando manutenção futura
+
+- Prisma ORM no back-end pelo uso de uma sintaxe moderna e simples, acelerando o desenvolvimento
+
+- AWS Elastic Beanstalk foi usado para hospedagem back-end pela facilidade de gerenciamento automatizado de deploy e scaling
+
+- Serviço de E-mail Resend API por oferecer integração simplificada, alta taxa de entrega (deliverability) e suporte moderno a templates de e-mail via API REST
+
+## Trade-offs
+
+- Optar pela Vercel para front-end gera dependência do ecossistema deles, mas a vantagem prática supera esse ponto nesta fase do projeto
+
+- Prisma traz agilidade mas tem um overhead de abstração que será monitorado conforme o volume de dados crescer

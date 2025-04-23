@@ -1,19 +1,19 @@
-# Objetivos do Sistema
+# Diagrama da Arquitetura
 
-## Arquitetura do Sistema
+## Diagrama de deploy
 
 ```mermaid
 flowchart TD
 
   %% Front-end
   subgraph Frontend
-    FEWeb["Web App - Next.js + Tailwind CSS"]
-    FEMobile["Mobile App - React Native"]
+    FEWeb["Web App"]
+    FEMobile["Mobile App"]
   end
 
   %% Back-end
   subgraph Backend
-    API["Nest.js API"]
+    API["API"]
     DB["PostgreSQL Database"]
     S3["AWS S3 (Armazenamento de Imagens)"]
   end

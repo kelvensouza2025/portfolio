@@ -1,0 +1,37 @@
+# Diagrama da Arquitetura
+
+## Diagrama de deploy
+
+```mermaid
+flowchart TD
+
+  %% Front-end
+  subgraph Frontend
+    MobileApp["Mobile App"]
+    Firebase["Firebase Firestore (Offline/Online Sync)"]
+  end
+
+  %% Back-end
+  subgraph Backend
+    API["API"]
+    Rabbit["RabbitMQ (Mensageria de Eventos)"]
+    DB["PostgreSQL Database"]
+  end
+
+  %% Infraestrutura
+  subgraph Infraestrutura
+    Hostinger["Hostinger VPS"]
+  end
+
+  %% Conexões
+  MobileApp -->|Sync Offline/Online| Firebase
+  Firebase -->|Chamada REST| API
+  MobileApp -->|API REST| API
+
+  API -->|Prisma ORM| DB
+  API -->|Publica Eventos| Rabbit
+  Rabbit -->|Processa Eventos| API
+
+  API --> Hostinger
+  Rabbit --> Hostinger
+```

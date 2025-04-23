@@ -1,55 +1,52 @@
-import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import { Layout } from "nextra-theme-docs";
+import "./globals.css";
+import { Footer, Layout, Navbar } from "nextra-theme-docs";
+import { Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import "nextra-theme-docs/style.css";
-import "./globals.css";
-import Header from "@/components/Header";
 
-const poppins = Poppins({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
-
-export const metadata: Metadata = {
-  title: "Kelven Souza - Portfólio",
-  description: "Portfólio feito com Next e Nextra",
+export const metadata = {
+  // Define your metadata here
+  // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
 };
 
-// const navbar = (
-//   <Navbar
-//     logo={<b>Kelven Souza</b>}
-//     // você pode customizar o Navbar aqui também
-//   />
-// );
-
-// const footer = <Footer>Kelven Souza © 2025</Footer>;
+// const banner = <Banner storageKey="some-key">Nextra 4.0 is released 🎉</Banner>;
+const navbar = (
+  <Navbar
+    logo={<b>Portfólio</b>}
+    // ... Your additional navbar options
+  />
+);
+const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>;
 
 export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="pt-BR" dir="ltr" suppressHydrationWarning>
-      {/* <Head>Você pode adicionar meta tags extras aqui</Head> */}
-      <body
-        className={`${poppins.variable} antialiased`}
-        suppressHydrationWarning={true}
-        {...({} as React.HTMLAttributes<HTMLBodyElement>)}
+    <html
+      // Not required, but good for SEO
+      lang="en"
+      // Required to be set
+      dir="ltr"
+      // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
+      suppressHydrationWarning
+    >
+      <Head
+      // ... Your additional head options
       >
+        {/* Your additional tags should be passed as `children` of `<Head>` element */}
+      </Head>
+      <body>
         <Layout
           banner={false}
-          navbar={false}
+          navbar={navbar}
           pageMap={await getPageMap()}
-          footer={false}
+          docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
+          footer={footer}
+          // ... Your additional layout options
         >
-          <div className="flex flex-col bg-[#1b1b1f]">
-            <Header />
-
-            {children}
-          </div>
+          {children}
         </Layout>
       </body>
     </html>

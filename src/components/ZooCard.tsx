@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function ZooCard() {
   return (
     <Link href={"/docs/zoo"}>
-      <div className="text-[#DFDFD6] bg-[#202127] rounded-[18px] max-w-[400px] min-h-[364px]">
+      <div className="text-[#DFDFD6] bg-[#202127] rounded-[18px] min-h-[364px]">
         <div className=" rounded-t-[18px] flex items-center justify-center bg-linear-to-r from-orange-300 to-orange-600 py-3">
           <Image src={ZooLogo} alt="" className="w-40 h-40" />
         </div>

@@ -12,10 +12,7 @@ export default function Header() {
 
       <div className="hidden sm:flex gap-8">
         <Link href={"/"} className="text-white">
-          Projetos
-        </Link>
-        <Link href={"/"} className="text-white">
-          Contato
+          Início
         </Link>
       </div>
     </div>
