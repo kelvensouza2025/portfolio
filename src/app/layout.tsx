@@ -32,11 +32,23 @@ export default async function RootLayout({
       // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
       suppressHydrationWarning
     >
-      <Head
-      // ... Your additional head options
-      >
-        {/* Your additional tags should be passed as `children` of `<Head>` element */}
+      <Head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-78TKX711SJ"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-78TKX711SJ');
+      `,
+          }}
+        />
       </Head>
+
       <body>
         <Layout
           banner={false}
@@ -45,6 +57,7 @@ export default async function RootLayout({
           docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
           footer={footer}
           // ... Your additional layout options
+          darkMode={true}
         >
           {children}
         </Layout>
