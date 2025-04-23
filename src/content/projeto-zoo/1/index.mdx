@@ -7,18 +7,14 @@ O sistema foi desenhado para funcionar Offline First, permitindo operação em l
 
 ## Tecnologias
 
-- Front-end Mobile: React Native
-
-- Back-end: NestJS + Prisma ORM
-
 - Banco de Dados: PostgreSQL
-
-- Sincronização offline/online: Firebase Firestore
-
+- Back-end: NestJS + Prisma ORM
+- Front-end Mobile: React Native
 - Comunicação Assíncrona: RabbitMQ
-
 - Hospedagem do servidor: Hostinger VPS
+- Sincronização offline/online: Firebase Firestore
 
 ## Modelo arquitetural
 
-Arquitetura baseada em DDD (Domain-Driven Design) desde o início, com separação clara dos contextos de negócio e comunicação baseada em eventos.
+- Arquitetura baseada em DDD (Domain-Driven Design) com separação clara dos contextos de negócio e comunicação baseada em eventos
+- Multi-tenant, garantindo separação lógica de dados e segurança entre as organizações, permitindo escalabilidade horizontal futura

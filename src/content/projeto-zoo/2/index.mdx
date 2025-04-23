@@ -3,17 +3,13 @@
 ## Decisões
 
 - React Native para entrega rápida para iOS e Android
-
-- Nest.js no back-end por ser modular, baseado em conceitos de OOP e SOLID, facilitando manutenção futura
-
 - Prisma ORM no back-end pelo uso de uma sintaxe moderna e simples, acelerando o desenvolvimento
-
+- Nest.js no back-end por ser modular, baseado em conceitos de OOP e SOLID, facilitando manutenção futura
 - RabbitMQ implementado para comunicação assíncrona (eventos como agendamento de procedimentos e notificações)
-
 - Firebase Firestore para armazenamento local e sincronização automática de dados em dispositivos móveis, garantindo resiliência a quedas de conexão
+- O sistema back-end foi desenhado com suporte a multi-tenant, separando dados e operações por tenant ID, garantindo isolamento e segurança entre diferentes organizações
 
 ## Trade-offs
 
 - RabbitMQ adiciona um componente de infraestrutura adicional, mas é essencial para garantir escalabilidade de eventos críticos
-
 - Firebase traz dependência de plataforma externa, mas oferece sincronização de alta qualidade necessária para o modelo offline-first
